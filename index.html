@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Task List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>📝 My Task List</h1>
+        
+        <!-- Task Counter -->
+        <div class="task-stats">
+            <span id="totalTasks">0</span> tasks • 
+            <span id="completedTasks">0</span> completed • 
+            <span id="remainingTasks">0</span> remaining
+        </div>
+        
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="What needs to be done?">
+            <select id="prioritySelect">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+            </select>
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <ul class="task-list" id="taskList">
+            <div class="empty-state">No tasks yet. Add one above!</div>
+        </ul>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
