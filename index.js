@@ -7,7 +7,9 @@ document.getElementById('taskInput').addEventListener('keypress', function(e) {
 
 function addTask() {
     const input = document.getElementById('taskInput');
+    const prioritySelect = document.getElementById('prioritySelect');
     const taskText = input.value.trim();
+    const priority = prioritySelect.value;
     
     if (taskText === '') {
         alert('Please enter a task!');
@@ -22,11 +24,12 @@ function addTask() {
         emptyState.remove();
     }
 
-    // Create new task element
+    // Create new task element with priority
     const li = document.createElement('li');
-    li.className = 'task-item';
+    li.className = `task-item priority-${priority}`;
     
     li.innerHTML = `
+        <span class="priority-badge">${priority}</span>
         <span class="task-text" onclick="toggleTask(this)">${taskText}</span>
         <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
     `;
